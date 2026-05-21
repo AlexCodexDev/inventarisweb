@@ -1,13 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
+import Home from "./pages/home";
+import Profil from "./pages/profil";
+import Pengguna from "./pages/pengguna";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<Home />} />
+          <Route path="pengguna" element={<Pengguna />} />
+          <Route path="profil" element={<Profil />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
