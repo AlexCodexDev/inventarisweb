@@ -76,8 +76,8 @@ const Login = () => {
                             <Text textAlign="center">My Inventory</Text>
                         </CardTitle>
                         <CardBody gapY="10px">
-                            <Input placeholder="Username" type="text" value={username} onChange={(e) => setUsername(e.target.value)}></Input>
-                            <Input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></Input>
+                            <Input placeholder="Username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                            <Input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                             <Button
                                 backgroundColor="teal"
                                 color="white"
