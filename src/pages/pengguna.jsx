@@ -9,7 +9,6 @@ const Pengguna = () => {
     const navigate = useNavigate();
 
     const [user, setUser] = useState([]);
-    const [flag, setFlag] = useState(false);
 
     const selectPengguna = async () => {
         const url = "http://localhost/inventarisweb/penggunaread.php";
@@ -30,9 +29,8 @@ const Pengguna = () => {
             const res = await axios.post(url, body);
 
             if(res.data.STATUS === "BERHASIL") {
-                navigate("/dashboard/pengguna");
+                await selectPengguna();
                 TampilPesan("Info", "Data berhasil dihapus!");
-                setFlag(true);
             } else {
                 TampilPesan("Info", "Gagal menghapus data!");
             }
@@ -43,11 +41,7 @@ const Pengguna = () => {
 
     useEffect(() => {
         selectPengguna();
-
-        if(flag) {
-            selectPengguna();
-        }
-    }, [flag]);
+    }, []);
 
     return (
         <>
