@@ -41,7 +41,7 @@ const Login = () => {
                 TampilPesan("Info", "Username atau Password salah!");
             }
         } catch (error) {
-            console.log(error);
+            TampilPesan("Info", "Terjadi kesalahan");
         }
     }
 
